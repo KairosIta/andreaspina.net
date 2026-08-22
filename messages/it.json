@@ -1,0 +1,22 @@
+{
+  "Metadata": {
+    "title": "Andrea Spina — Sviluppatore",
+    "description": "Costruisco siti web, gestionali, agenti AI e automazioni su misura."
+  },
+  "Nav": {
+    "home": "Home",
+    "work": "Progetti",
+    "about": "Chi sono",
+    "contact": "Contatti",
+    "switchLanguage": "Cambia lingua"
+  },
+  "Home": {
+    "eyebrow": "Sviluppatore indipendente",
+    "title": "Costruisco software che toglie lavoro noioso alle persone.",
+    "subtitle": "Siti web, gestionali, agenti AI e automazioni. Dall'idea alla messa online.",
+    "cta": "Guarda i progetti"
+  },
+  "Footer": {
+    "rights": "Tutti i diritti riservati."
+  }
+}
