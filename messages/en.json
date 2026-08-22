@@ -1,0 +1,22 @@
+{
+  "Metadata": {
+    "title": "Andrea Spina — Developer",
+    "description": "I build websites, business software, AI agents and automations."
+  },
+  "Nav": {
+    "home": "Home",
+    "work": "Work",
+    "about": "About",
+    "contact": "Contact",
+    "switchLanguage": "Change language"
+  },
+  "Home": {
+    "eyebrow": "Independent developer",
+    "title": "I build software that takes the boring work off people's hands.",
+    "subtitle": "Websites, business software, AI agents and automations. From idea to production.",
+    "cta": "See the work"
+  },
+  "Footer": {
+    "rights": "All rights reserved."
+  }
+}

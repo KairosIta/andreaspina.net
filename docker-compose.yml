@@ -1,0 +1,50 @@
+# Ambiente di sviluppo locale.
+# In produzione il database e' un servizio gestito a parte: questo file
+# serve solo a far girare la stessa combinazione Postgres+pgvector in locale.
+services:
+  postgres:
+    image: pgvector/pgvector:0.8.6-pg18
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-andreaspina}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-dev_only_password}
+      POSTGRES_DB: ${POSTGRES_DB:-andreaspina}
+    ports:
+      # Solo loopback: le regole NAT di Docker scavalcano il firewall
+      # dell'host, quindi un "5432:5432" esporrebbe il database in rete.
+      - "127.0.0.1:5432:5432"
+    volumes:
+      # Postgres 18+ vuole il mount su /var/lib/postgresql (non su .../data):
+      # i dati finiscono in una sottocartella con il numero di major version,
+      # cosi' un futuro pg_upgrade --link non attraversa il bordo del mount.
+      - postgres-data:/var/lib/postgresql
+      - ./docker/postgres:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "pg_isready -U ${POSTGRES_USER:-andreaspina} -d ${POSTGRES_DB:-andreaspina}",
+        ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Facoltativo: `docker compose --profile prod up` per provare in locale
+  # esattamente l'immagine che va in produzione.
+  web:
+    profiles: ["prod"]
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgres://${POSTGRES_USER:-andreaspina}:${POSTGRES_PASSWORD:-dev_only_password}@postgres:5432/${POSTGRES_DB:-andreaspina}
+      SITE_URL: ${SITE_URL:-http://localhost:3000}
+    ports:
+      - "127.0.0.1:3000:3000"
+
+volumes:
+  postgres-data:
