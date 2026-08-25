@@ -1,7 +1,6 @@
 "use client";
 
 import { useLocale, useTranslations } from "next-intl";
-import { useParams } from "next/navigation";
 import { useTransition } from "react";
 
 import { usePathname, useRouter } from "@/i18n/navigation";
@@ -12,18 +11,16 @@ export function LocaleSwitcher() {
   const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
-  const params = useParams();
   const [isPending, startTransition] = useTransition();
 
   function onSelect(next: Locale) {
+    const query = window.location.search;
+    const hash = window.location.hash;
+
     startTransition(() => {
-      // `params` conserva gli eventuali segmenti dinamici della rotta
-      // corrente, cosi' il cambio lingua non riporta alla home.
-      router.replace(
-        // @ts-expect-error -- pathname e params sono coerenti a runtime
-        { pathname, params },
-        { locale: next },
-      );
+      // Il pathname restituito da next-intl conserva la rotta corrente;
+      // query e hash mantengono anche il contesto dentro la pagina.
+      router.replace(`${pathname}${query}${hash}`, { locale: next });
     });
   }
 

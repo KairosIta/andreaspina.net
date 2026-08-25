@@ -1,10 +1,12 @@
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 import { LocaleSwitcher } from "@/components/locale-switcher";
-import { Link } from "@/i18n/navigation";
+import { getPathname, Link } from "@/i18n/navigation";
 
 export function SiteHeader() {
   const t = useTranslations("Nav");
+  const locale = useLocale();
+  const projectsHref = `${getPathname({ href: "/", locale })}#projects`;
 
   return (
     <header className="sticky top-0 z-50 border-b border-border/80 bg-background/85 backdrop-blur-xl supports-[backdrop-filter]:bg-background/70">
@@ -18,7 +20,15 @@ export function SiteHeader() {
         >
           Andrea Spina
         </Link>
-        <LocaleSwitcher />
+        <div className="flex items-center gap-2 sm:gap-4">
+          <a
+            href={projectsHref}
+            className="hidden min-h-10 items-center rounded-full px-3 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand sm:inline-flex"
+          >
+            {t("work")}
+          </a>
+          <LocaleSwitcher />
+        </div>
       </nav>
     </header>
   );

@@ -172,6 +172,36 @@
     background-clip: text;
     color: transparent;
   }
+
+  .projects-grid {
+    background-image: radial-gradient(
+      circle,
+      color-mix(in oklab, var(--brand) 15%, transparent) 1px,
+      transparent 1px
+    );
+    background-size: 2rem 2rem;
+    mask-image: linear-gradient(
+      to bottom,
+      transparent,
+      black 18%,
+      black 82%,
+      transparent
+    );
+  }
+
+  .project-card::before {
+    position: absolute;
+    inset: 0 auto auto 12%;
+    width: 38%;
+    height: 1px;
+    background: linear-gradient(
+      to right,
+      transparent,
+      color-mix(in oklab, var(--brand) 70%, transparent),
+      transparent
+    );
+    content: "";
+  }
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -222,5 +252,15 @@
   .hero-gradient-text {
     background-image: none;
     color: CanvasText;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-card {
+    transition-duration: 0s;
+  }
+
+  .project-card:hover {
+    transform: none;
   }
 }

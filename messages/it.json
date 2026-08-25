@@ -19,7 +19,7 @@
     "title": "Trasformo problemi reali in",
     "titleAccent": "software che lavora con te.",
     "subtitle": "Progetto siti, software gestionali e assistenti AI per attività, PMI e team: dall'idea a un prodotto online, documentato e verificabile.",
-    "primaryCta": "Scopri come lavoro",
+    "primaryCta": "Esplora i progetti",
     "secondaryCta": "Esplora questo sito",
     "secondaryCtaAria": "Esplora il repository pubblico di questo sito su GitHub (si apre in una nuova scheda)",
     "trustNote": "Anche questo sito è open source, con CI pubblica.",
@@ -44,6 +44,54 @@
         "eyebrow": "Prova concreta",
         "title": "Onda è open source: esplora il progetto",
         "ariaLabel": "Esplora Onda su GitHub (si apre in una nuova scheda)"
+      }
+    },
+    "projects": {
+      "eyebrow": "Lavoro visibile",
+      "title": "Progetti da aprire, usare e verificare.",
+      "description": "I progetti raccontano meglio delle promesse come affronto un problema: qui trovi prodotti reali, codice pubblico e controlli consultabili.",
+      "statuses": {
+        "openSource": "Open source"
+      },
+      "ctas": {
+        "source": "Esplora il progetto"
+      },
+      "items": {
+        "website": {
+          "category": "Portfolio · Piattaforma web",
+          "title": "andreaspina.net: il portfolio è anche il progetto.",
+          "description": "Un sito personale progettato come prova pubblica del lavoro: contenuti bilingui, attenzione all'accessibilità e una pubblicazione controllata dal codice al container.",
+          "proofs": {
+            "experience": "Esperienza bilingue, responsive e accessibile.",
+            "delivery": "Build Docker riproducibile e verificata automaticamente.",
+            "source": "Codice e pipeline CI consultabili pubblicamente."
+          },
+          "ariaLabel": "Esplora il repository di andreaspina.net su GitHub (si apre in una nuova scheda)"
+        },
+        "onda": {
+          "category": "Applicazione mobile · Musica",
+          "title": "Onda riunisce la musica indipendente in un solo player.",
+          "description": "Un player Android open source che integra Audius e Jamendo senza account Onda né un backend proprietario, mantenendo la libreria sul dispositivo.",
+          "proofs": {
+            "catalog": "Catalogo e ricerca federati tra Audius e Jamendo.",
+            "playback": "Riproduzione in background e controlli nativi.",
+            "privacy": "Preferiti, cronologia e playlist conservati sul dispositivo."
+          },
+          "ariaLabel": "Esplora il repository di Onda su GitHub (si apre in una nuova scheda)"
+        }
+      },
+      "tags": {
+        "nextjs": "Next.js 16",
+        "typescript": "TypeScript",
+        "docker": "Docker",
+        "ci": "CI pubblica",
+        "reactNative": "React Native",
+        "expo": "Expo",
+        "android": "Android"
+      },
+      "growth": {
+        "title": "Una struttura pronta a crescere.",
+        "description": "Ogni nuovo lavoro entrerà come caso concreto: contesto, prodotto realizzato e prove consultabili, con la stessa chiarezza in italiano e inglese."
       }
     }
   },
