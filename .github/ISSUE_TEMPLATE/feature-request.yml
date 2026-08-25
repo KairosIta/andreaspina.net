@@ -1,0 +1,32 @@
+name: Improvement proposal
+description: Propose a focused improvement to the public website or repository
+title: "[Proposal]: "
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or opportunity
+      description: Describe the user need or repository quality issue.
+    validations:
+      required: true
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Desired outcome
+      description: Explain the observable result, without prescribing implementation details when unnecessary.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Supporting context
+      description: Add examples, screenshots, standards, or public sources when useful.
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: I searched existing issues for similar proposals.
+          required: true
+        - label: The proposal does not disclose private projects, infrastructure values, or personal data.
+          required: true

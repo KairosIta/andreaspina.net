@@ -38,8 +38,11 @@ export function LocaleSwitcher() {
           type="button"
           disabled={isPending || option === locale}
           onClick={() => onSelect(option)}
+          aria-label={
+            option === "it" ? t("switchToItalian") : t("switchToEnglish")
+          }
           aria-current={option === locale ? "true" : undefined}
-          className="rounded px-2 py-1 uppercase transition enabled:text-muted-foreground enabled:hover:text-foreground"
+          className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-full px-2 text-xs font-semibold tracking-wider uppercase transition-colors enabled:text-muted-foreground enabled:hover:bg-muted enabled:hover:text-foreground enabled:focus-visible:outline-2 enabled:focus-visible:outline-offset-2 enabled:focus-visible:outline-brand disabled:bg-muted disabled:text-foreground"
         >
           {option}
         </button>

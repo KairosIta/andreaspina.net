@@ -1,20 +1,51 @@
 {
   "Metadata": {
-    "title": "Andrea Spina — Developer",
-    "description": "I build websites, business software, AI agents and automations."
+    "title": "Andrea Spina — Software & AI Agents",
+    "description": "I design websites, business software and AI agents for businesses, SMEs and teams: from the first idea to an online, documented and verifiable product."
   },
   "Nav": {
     "home": "Home",
     "work": "Work",
     "about": "About",
     "contact": "Contact",
-    "switchLanguage": "Change language"
+    "primaryNavigation": "Primary navigation",
+    "skipToContent": "Skip to content",
+    "switchLanguage": "Change language",
+    "switchToItalian": "Switch to Italian",
+    "switchToEnglish": "Switch to English"
   },
   "Home": {
-    "eyebrow": "Independent developer",
-    "title": "I build software that takes the boring work off people's hands.",
-    "subtitle": "Websites, business software, AI agents and automations. From idea to production.",
-    "cta": "See the work"
+    "eyebrow": "Websites · Custom software · AI agents",
+    "title": "I turn real problems into",
+    "titleAccent": "software that works with you.",
+    "subtitle": "I design websites, business software and AI assistants for businesses, SMEs and teams: from the first idea to an online, documented and verifiable product.",
+    "primaryCta": "See how I work",
+    "secondaryCta": "Explore this website",
+    "secondaryCtaAria": "Explore this website's public repository on GitHub (opens in a new tab)",
+    "trustNote": "This website is open source too, with public CI.",
+    "proof": {
+      "eyebrow": "How a project takes shape",
+      "title": "From an idea to something that truly works.",
+      "steps": {
+        "understand": {
+          "title": "Understand",
+          "description": "Goals, users and the work that needs simplifying."
+        },
+        "build": {
+          "title": "Build",
+          "description": "Websites, business software and AI agents made for real work."
+        },
+        "verify": {
+          "title": "Verify",
+          "description": "Tests and automated checks before every release."
+        }
+      },
+      "project": {
+        "eyebrow": "Tangible proof",
+        "title": "Onda is open source: explore the project",
+        "ariaLabel": "Explore Onda on GitHub (opens in a new tab)"
+      }
+    }
   },
   "Footer": {
     "rights": "All rights reserved."
