@@ -1,20 +1,51 @@
 {
   "Metadata": {
-    "title": "Andrea Spina — Sviluppatore",
-    "description": "Costruisco siti web, gestionali, agenti AI e automazioni su misura."
+    "title": "Andrea Spina — Software e Agenti AI",
+    "description": "Progetto siti, software gestionali e Agenti AI per attività, PMI e team: dall'idea a un prodotto online, documentato e verificabile."
   },
   "Nav": {
     "home": "Home",
     "work": "Progetti",
     "about": "Chi sono",
     "contact": "Contatti",
-    "switchLanguage": "Cambia lingua"
+    "primaryNavigation": "Navigazione principale",
+    "skipToContent": "Vai al contenuto",
+    "switchLanguage": "Cambia lingua",
+    "switchToItalian": "Passa all'italiano",
+    "switchToEnglish": "Passa all'inglese"
   },
   "Home": {
-    "eyebrow": "Sviluppatore indipendente",
-    "title": "Costruisco software che toglie lavoro noioso alle persone.",
-    "subtitle": "Siti web, gestionali, agenti AI e automazioni. Dall'idea alla messa online.",
-    "cta": "Guarda i progetti"
+    "eyebrow": "Siti · Software su misura · Agenti AI",
+    "title": "Trasformo problemi reali in",
+    "titleAccent": "software che lavora con te.",
+    "subtitle": "Progetto siti, software gestionali e assistenti AI per attività, PMI e team: dall'idea a un prodotto online, documentato e verificabile.",
+    "primaryCta": "Scopri come lavoro",
+    "secondaryCta": "Esplora questo sito",
+    "secondaryCtaAria": "Esplora il repository pubblico di questo sito su GitHub (si apre in una nuova scheda)",
+    "trustNote": "Anche questo sito è open source, con CI pubblica.",
+    "proof": {
+      "eyebrow": "Come prende forma un progetto",
+      "title": "Dall'idea a qualcosa che funziona davvero.",
+      "steps": {
+        "understand": {
+          "title": "Capire",
+          "description": "Obiettivi, utenti e lavoro da semplificare."
+        },
+        "build": {
+          "title": "Costruire",
+          "description": "Siti, gestionali e agenti AI pensati per il lavoro reale."
+        },
+        "verify": {
+          "title": "Verificare",
+          "description": "Test e controlli automatici prima di ogni pubblicazione."
+        }
+      },
+      "project": {
+        "eyebrow": "Prova concreta",
+        "title": "Onda è open source: esplora il progetto",
+        "ariaLabel": "Esplora Onda su GitHub (si apre in una nuova scheda)"
+      }
+    }
   },
   "Footer": {
     "rights": "Tutti i diritti riservati."
