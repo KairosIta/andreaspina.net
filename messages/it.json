@@ -42,8 +42,8 @@
       },
       "project": {
         "eyebrow": "Prova concreta",
-        "title": "Onda è open source: esplora il progetto",
-        "ariaLabel": "Esplora Onda su GitHub (si apre in una nuova scheda)"
+        "title": "Ares è open source: esplora l'agente",
+        "ariaLabel": "Esplora Ares su GitHub (si apre in una nuova scheda)"
       }
     },
     "projects": {
@@ -68,6 +68,17 @@
           },
           "ariaLabel": "Esplora il repository di andreaspina.net su GitHub (si apre in una nuova scheda)"
         },
+        "ares": {
+          "category": "Agente AI · Local-first",
+          "title": "Ares: un agente AI locale che ricorda e lavora con te.",
+          "description": "Un assistente personale open source in Python che usa modelli locali tramite Ollama, mantiene memoria fra sessioni e gestisce le operazioni sensibili con conferme e procedure reversibili.",
+          "proofs": {
+            "local": "Inferenza e stato ordinari restano locali, senza API cloud obbligatorie.",
+            "memory": "Memoria persistente per profilo, sessioni, entità e conoscenza riutilizzabile.",
+            "reliability": "Backup verificati, restore protetto e suite isolata con prova E2E locale."
+          },
+          "ariaLabel": "Esplora il repository di Ares su GitHub (si apre in una nuova scheda)"
+        },
         "onda": {
           "category": "Applicazione mobile · Musica",
           "title": "Onda riunisce la musica indipendente in un solo player.",
@@ -87,7 +98,11 @@
         "ci": "CI pubblica",
         "reactNative": "React Native",
         "expo": "Expo",
-        "android": "Android"
+        "android": "Android",
+        "python": "Python 3.12",
+        "ollama": "Ollama",
+        "agno": "Agno",
+        "localFirst": "Local-first"
       },
       "growth": {
         "title": "Una struttura pronta a crescere.",

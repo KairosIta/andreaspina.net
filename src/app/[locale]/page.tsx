@@ -3,6 +3,7 @@ import {
   ArrowUpRight,
   BadgeCheck,
   Blocks,
+  BrainCircuit,
   CheckCircle2,
   Code2,
   Layers3,
@@ -22,7 +23,7 @@ const proofSteps = [
 ] as const;
 
 type FeaturedProject = {
-  key: "website" | "onda";
+  key: "website" | "ares" | "onda";
   href: string;
   linkKind: "external" | "internal";
   statusKey: string;
@@ -42,6 +43,16 @@ const featuredProjects: readonly FeaturedProject[] = [
     icon: Code2,
     proofKeys: ["experience", "delivery", "source"],
     tagKeys: ["nextjs", "typescript", "docker", "ci"],
+  },
+  {
+    key: "ares",
+    href: "https://github.com/KairosIta/Ares",
+    linkKind: "external",
+    statusKey: "openSource",
+    ctaKey: "source",
+    icon: BrainCircuit,
+    proofKeys: ["local", "memory", "reliability"],
+    tagKeys: ["python", "ollama", "agno", "localFirst"],
   },
   {
     key: "onda",
@@ -176,7 +187,7 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
                 </ol>
 
                 <a
-                  href="https://github.com/KairosIta/Onda"
+                  href="https://github.com/KairosIta/Ares"
                   target="_blank"
                   rel="noreferrer"
                   aria-label={t("proof.project.ariaLabel")}
@@ -225,7 +236,7 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
             </p>
           </header>
 
-          <div className="mt-12 grid gap-6 lg:grid-cols-2">
+          <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
             {featuredProjects.map(
               ({
                 key,
@@ -240,10 +251,10 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
                 <article
                   key={key}
                   aria-labelledby={`${key}-title`}
-                  className="project-card group relative flex min-h-full flex-col overflow-hidden rounded-4xl border border-border/80 bg-card/90 p-6 shadow-sm transition-[border-color,box-shadow,transform] hover:-translate-y-1 hover:border-brand/25 hover:shadow-xl hover:shadow-brand/8 sm:p-8"
+                  className="project-card group relative flex min-h-full flex-col overflow-hidden rounded-4xl border border-border/80 bg-card/90 p-6 shadow-sm transition-[border-color,box-shadow,background-color] hover:border-brand/25 hover:bg-card hover:shadow-xl hover:shadow-brand/8 sm:p-8"
                 >
                   <div className="flex items-start justify-between gap-4">
-                    <span className="flex size-12 items-center justify-center rounded-2xl border border-brand/15 bg-brand/8 text-brand shadow-sm">
+                    <span className="project-card-icon flex size-12 items-center justify-center rounded-2xl border border-brand/15 bg-brand/8 text-brand shadow-sm transition-[translate,background-color] group-hover:-translate-y-0.5 group-hover:bg-brand/12">
                       <Icon className="size-6" aria-hidden="true" />
                     </span>
                     <span className="rounded-full border border-brand/15 bg-brand/7 px-3 py-1.5 text-[0.6875rem] font-semibold tracking-[0.12em] text-brand uppercase">
