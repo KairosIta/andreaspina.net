@@ -10,7 +10,7 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 
 # andreaspina.net
 
-Sito personale e portfolio di Andrea Spina, con assistente AI integrato.
+Sito personale e portfolio open source di Andrea Spina.
 Repository pubblico: il codice fa parte di quello che il sito mostra.
 
 ## Comandi

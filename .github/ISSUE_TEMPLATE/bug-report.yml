@@ -1,0 +1,47 @@
+name: Bug report
+description: Report a reproducible problem in the website or repository
+title: "[Bug]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for helping improve the project. Do not include secrets or security vulnerabilities here; use the private security channel instead.
+  - type: input
+    id: page
+    attributes:
+      label: Page or component
+      description: Where did the problem occur?
+      placeholder: /it, /en, Hero, Docker build…
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to reproduce
+      description: Provide the smallest reliable sequence that reproduces the issue.
+      placeholder: |
+        1. Open…
+        2. Select…
+        3. Observe…
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Browser, viewport, operating system, or relevant runtime versions.
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: I searched existing issues for duplicates.
+          required: true
+        - label: This report contains no secrets, private data, or security vulnerability details.
+          required: true
