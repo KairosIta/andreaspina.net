@@ -57,17 +57,27 @@ export default async function LocaleLayout({
 
   // Senza questa chiamata le pagine figlie diventano dinamiche.
   setRequestLocale(locale);
+  const t = await getTranslations("Nav");
 
   return (
     <html
       lang={locale}
       className={`${GeistSans.variable} ${GeistMono.variable}`}
+      data-scroll-behavior="smooth"
       suppressHydrationWarning
     >
       <body className="flex min-h-dvh flex-col antialiased">
         <NextIntlClientProvider>
+          <a
+            href="#main-content"
+            className="fixed top-3 left-3 z-100 -translate-y-24 rounded-full bg-foreground px-4 py-2 text-sm font-semibold text-background shadow-lg transition-transform focus:translate-y-0 focus:outline-2 focus:outline-offset-2 focus:outline-ring"
+          >
+            {t("skipToContent")}
+          </a>
           <SiteHeader />
-          <main className="flex-1">{children}</main>
+          <main id="main-content" tabIndex={-1} className="flex-1">
+            {children}
+          </main>
           <SiteFooter />
         </NextIntlClientProvider>
       </body>
