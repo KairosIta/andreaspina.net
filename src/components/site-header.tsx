@@ -1,12 +1,14 @@
 import { useLocale, useTranslations } from "next-intl";
 
 import { LocaleSwitcher } from "@/components/locale-switcher";
-import { getPathname, Link } from "@/i18n/navigation";
+import { getPathname } from "@/i18n/navigation";
 
 export function SiteHeader() {
   const t = useTranslations("Nav");
   const locale = useLocale();
-  const projectsHref = `${getPathname({ href: "/", locale })}#projects`;
+  const homePath = getPathname({ href: "/", locale });
+  const topHref = `${homePath}#top`;
+  const projectsHref = `${homePath}#projects`;
 
   return (
     <header className="sticky top-0 z-50 border-b border-border/80 bg-background/85 backdrop-blur-xl supports-[backdrop-filter]:bg-background/70">
@@ -14,12 +16,12 @@ export function SiteHeader() {
         aria-label={t("primaryNavigation")}
         className="mx-auto flex max-w-6xl items-center justify-between px-6 py-3.5"
       >
-        <Link
-          href="/#top"
+        <a
+          href={topHref}
           className="rounded-sm py-1 font-semibold tracking-tight focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand"
         >
           Andrea Spina
-        </Link>
+        </a>
         <div className="flex items-center gap-2 sm:gap-4">
           <a
             href={projectsHref}
