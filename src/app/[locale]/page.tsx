@@ -14,7 +14,12 @@ import {
 } from "lucide-react";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 
+import { JsonLd } from "@/components/json-ld";
 import { Link } from "@/i18n/navigation";
+import {
+  buildHomePageStructuredData,
+  type PublicSourceDetails,
+} from "@/lib/structured-data";
 
 const proofSteps = [
   { key: "understand", icon: SearchCheck },
@@ -24,7 +29,9 @@ const proofSteps = [
 
 type FeaturedProject = {
   key: "website" | "ares" | "onda";
+  name: string;
   href: string;
+  source: PublicSourceDetails | null;
   linkKind: "external" | "internal";
   statusKey: string;
   ctaKey: string;
@@ -36,7 +43,14 @@ type FeaturedProject = {
 const featuredProjects: readonly FeaturedProject[] = [
   {
     key: "website",
+    name: "andreaspina.net",
     href: "https://github.com/KairosIta/andreaspina.net",
+    source: {
+      repositoryUrl: "https://github.com/KairosIta/andreaspina.net",
+      licenseUrl:
+        "https://github.com/KairosIta/andreaspina.net/blob/main/LICENSE",
+      programmingLanguage: "TypeScript",
+    },
     linkKind: "external",
     statusKey: "openSource",
     ctaKey: "source",
@@ -46,7 +60,13 @@ const featuredProjects: readonly FeaturedProject[] = [
   },
   {
     key: "ares",
+    name: "Ares",
     href: "https://github.com/KairosIta/Ares",
+    source: {
+      repositoryUrl: "https://github.com/KairosIta/Ares",
+      licenseUrl: "https://github.com/KairosIta/Ares/blob/main/LICENSE",
+      programmingLanguage: "Python",
+    },
     linkKind: "external",
     statusKey: "openSource",
     ctaKey: "source",
@@ -56,7 +76,13 @@ const featuredProjects: readonly FeaturedProject[] = [
   },
   {
     key: "onda",
+    name: "Onda",
     href: "https://github.com/KairosIta/Onda",
+    source: {
+      repositoryUrl: "https://github.com/KairosIta/Onda",
+      licenseUrl: "https://github.com/KairosIta/Onda/blob/main/LICENSE",
+      programmingLanguage: "TypeScript",
+    },
     linkKind: "external",
     statusKey: "openSource",
     ctaKey: "source",
@@ -70,10 +96,31 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
   const { locale } = await params;
   setRequestLocale(locale);
 
-  const t = await getTranslations("Home");
+  const [t, tMetadata] = await Promise.all([
+    getTranslations("Home"),
+    getTranslations("Metadata"),
+  ]);
+
+  const jsonLd = buildHomePageStructuredData({
+    locale,
+    title: tMetadata("title"),
+    description: tMetadata("description"),
+    projects: featuredProjects.flatMap(({ key, name, source }) =>
+      source
+        ? [
+            {
+              name,
+              description: t(`projects.items.${key}.description`),
+              source,
+            },
+          ]
+        : [],
+    ),
+  });
 
   return (
     <>
+      <JsonLd data={jsonLd} />
       <section
         id="top"
         aria-labelledby="hero-title"
